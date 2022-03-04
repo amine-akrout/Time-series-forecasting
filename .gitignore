@@ -3,6 +3,7 @@ venv/
 
 # python idea
 .idea/
+.ipynb_checkpoints/
 
 # data
 data/*

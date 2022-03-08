@@ -13,3 +13,7 @@ __pycache__/
 
 # mlflow articats 
 mlruns/*
+
+
+# tensorboard logs
+logs/*

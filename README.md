@@ -26,12 +26,14 @@ univariate analysis, seasonality and correlations
 
 ### Benchmarking of different Algorithms used for forecasting : 
 
-| Algorithms               	| Train Error 	| Test Error 	|
-|--------------------------	|-------------	|------------	|
-| ARIMA                    	|      -      	|   644.08   	|
-| Prophet                  	|      -      	|    817.7   	|
-| Prophet with regressor   	|      -      	|   817.63   	|
-| Prophet with all feature 	|      -      	|   814.09   	|
-| Vanilla LSTM             	|     466     	|   513.82   	|
-| Stacked LSTM             	|    460.47   	|   513.86   	|
-| Bidirectional LSTM       	|    438.07   	|   488.19   	|
+| Algorithm                    	| Training Time 	| Forecasting Time 	| RMSE   	| MAE    	| MAPE    	|
+|------------------------------	|---------------	|------------------	|--------	|--------	|---------	|
+| ARIMA                        	| 638 ms        	| 1min 11s         	| 542.68 	| 394.21 	| 23.61 % 	|
+| Prophet (baseline)           	| 2.6 s         	| 2.01 s           	| 985.96 	| 755.68 	| 40.36 % 	|
+| Prophet (1 regressor)        	| 1.87 s        	| 2.2 s            	| 842.02 	| 636.90 	| 37.79 % 	|
+| Prophet (4 regressors)       	| 1.09 s        	| 2.16 s           	| 837.53 	| 626.79 	| 36.02 % 	|
+| Prophet (optimized)          	| 31.4 s        	| 2.57 s           	| 380.87 	| 293.86 	| 18.40 % 	|
+| LSTM                         	| 1min 31s      	| 628 ms           	| 613.44 	| 426.53 	| 14.62 % 	|
+| XGBoost (only time features) 	| 1.81 s        	| 9 ms             	| 311.21 	| 213.37 	| 12.48 % 	|
+| XGBoost (all features)       	| 3.02 s        	| 6.99 ms          	| 281.19 	| 181.95 	| 9.68 %  	|
+| XGBoost (fine tuned)         	| 5.64 s        	| 5 ms             	| 277.48 	| 181.79 	| 8.00 %  	|
